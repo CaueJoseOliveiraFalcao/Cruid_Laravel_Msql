@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/' , 'App\Http\Controllers\Controller@index');
+
+Route::get('/post/{id}' , 'App\Http\Controllers\Controller@show');
+
+Route::get('/createpost/{name}' , 'App\Http\Controllers\Controller@store');
+
