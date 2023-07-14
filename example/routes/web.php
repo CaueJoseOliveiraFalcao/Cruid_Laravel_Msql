@@ -20,4 +20,4 @@ Route::get('/post/{id}', [Controller::class, 'show']);
 
 Route::post('/createuser', [Controller::class, 'store'])->name('store');
 
-Route::delete('/delete/{email}', [UserController::class, 'delete'])->name('users.delete');
+Route::delete('/delete/{email}', [Controller::class, 'delete'])->name('delete');

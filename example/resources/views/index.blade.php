@@ -26,8 +26,12 @@
         <h1>Usuarios</h1>
         @if (isset($allusers))
             @foreach ($allusers as $user)
-               <h1>User Name = {{$user->name}} <a href="#" onclick="event.preventDefault(); deleteUser('{{$user->email}}')">Deletar Usuario</a></h1>
-            @endforeach
+            <form method="POST" action="/delete/{{$user->email}}">
+                @csrf
+                @method('DELETE')
+               <h1>User Name = {{$user->name}} <button href="#">Deletar Usuario</button></h1>
+            </form>
+               @endforeach
         @else
             <h1>Don't have any user</h1>
         @endif
@@ -49,8 +53,6 @@
                     })
                 }
                 }
-            
         </script>
-        
     </body>
 </html>

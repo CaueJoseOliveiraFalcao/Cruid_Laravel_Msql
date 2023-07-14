@@ -36,13 +36,13 @@ class Controller extends BaseController
         ]);
         return redirect()->route('home');
     }
-    public function delete(Request $request)
+    public function delete(Request $request , $email)
     {
-        $email = $request -> email;
         $user = User::where('email' , $email)->first();
 
         if($user){
             $user -> delete();
+            return response()->json(['message' => ['Usuario excluido com sucesso'],200]);
         }
         return redirect()->route('home');
     }
