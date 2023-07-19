@@ -12,11 +12,10 @@
 
     </head>
     <body class="antialiased">
-        @if (@isset($allusers))
+        @if (@isset($user))
                <h1>User Name = {{$user->name}}   {{$user->id}}</h1>
         @else
             <h1>User Not Found</h1>
         @endif
-        
     </body>
 </html>
