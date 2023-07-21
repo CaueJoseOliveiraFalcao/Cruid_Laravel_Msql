@@ -35,24 +35,5 @@
         @else
             <h1>Don't have any user</h1>
         @endif
-        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-        <script>
-            const deleteUser = (email) =>{
-                if (confirm('Tem certeza que deseja excluir o usuario')) {
-                    axios.delete('/delete/' + email, {
-                        headers : {
-                            'X-CSRF-TOKEN': '{{ csrf_token() }}'
-                        }
-                    })
-                    .then(response => {
-                        alert("Usuario Excluido com Sucesso")
-                    })
-                    .catch(err => {
-                        console.log(err);
-                        alert("Ocorreu um erro ao tentar deletar o usuario")
-                    })
-                }
-                }
-        </script>
     </body>
 </html>
